@@ -67,6 +67,7 @@ function App() {
   console.log(formJson);
 } */
 
+/* Input section for general info */
 function GeneralInfo({ onAddPersonalInfo }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -135,6 +136,18 @@ function GeneralInfo({ onAddPersonalInfo }) {
   );
 }
 
+/* Output section of Personal Information */
+function DisplayName({ personalInfo }) {
+  return (
+    <>
+      <h1>Personal Infomation</h1>
+      <h2>{personalInfo.name}</h2>
+      <h4>{personalInfo.email}</h4> <h4>{personalInfo.tel}</h4>
+    </>
+  );
+}
+
+/* Input section for education Information */
 function Education({ onAddEducation }) {
   const [school, setSchool] = useState("");
   const [title, setTitle] = useState("");
@@ -218,6 +231,7 @@ function Education({ onAddEducation }) {
   );
 }
 
+/* function that render the list of education */
 function EducationList({ educationItems }) {
   return (
     <div className="education">
@@ -230,6 +244,8 @@ function EducationList({ educationItems }) {
     </div>
   );
 }
+
+/* Each education item that will be listed by EducationList function */
 function EducationItem({ educationItem }) {
   return (
     <li>
@@ -241,7 +257,8 @@ function EducationItem({ educationItem }) {
     </li>
   );
 }
-
+/* 
+function that list all working experience */
 function ExperienceList({ experienceItems }) {
   return (
     <div className="education">
@@ -258,6 +275,7 @@ function ExperienceList({ experienceItems }) {
   );
 }
 
+/* Each experience item that will be listed by ExperienceList function */
 function ExperienceItem({ experienceItem }) {
   return (
     <li>
@@ -348,16 +366,6 @@ function Experience({ onAddExperience }) {
         <br />
         <button type="submit">Submit</button>
       </form>
-    </>
-  );
-}
-
-function DisplayName({ personalInfo }) {
-  return (
-    <>
-      <h1>Personal Infomation</h1>
-      <h2>{personalInfo.name}</h2>
-      <h4>{personalInfo.email}</h4> <h4>{personalInfo.tel}</h4>
     </>
   );
 }
