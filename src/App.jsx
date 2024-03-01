@@ -23,9 +23,24 @@ function App() {
   return (
     <main className="mainContainer">
       <div className="inputContainer">
-        <GeneralInfo onAddPersonalInfo={handleAddPersonalInfo} />
-        <Education onAddEducation={handleAddEducation} />
-        <Experience onAddExperience={handleAddExperience} />
+        <div>
+          <GeneralInfo
+            onAddPersonalInfo={handleAddPersonalInfo}
+            className="personalInfoInput"
+          />
+        </div>
+        <div>
+          <Education
+            onAddEducation={handleAddEducation}
+            className="educationInput"
+          />
+        </div>
+        <div>
+          <Experience
+            onAddExperience={handleAddExperience}
+            className="experienceInput"
+          />
+        </div>
       </div>
       <div className="outputContainer">
         <div className="personalInfo">
@@ -196,6 +211,7 @@ function Education({ onAddEducation }) {
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
         />
+        <br />
         <button type="submit">Submit</button>
       </form>
     </>
@@ -218,7 +234,7 @@ function EducationItem({ educationItem }) {
   return (
     <li>
       <h3>{educationItem.title}</h3>
-      {educationItem.school}
+      <h4>{educationItem.school}</h4>
       <p>
         {educationItem.startDate} - {educationItem.endDate}
       </p>
@@ -329,6 +345,7 @@ function Experience({ onAddExperience }) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
+        <br />
         <button type="submit">Submit</button>
       </form>
     </>
