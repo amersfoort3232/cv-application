@@ -36,6 +36,7 @@ ol[role="list"] {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  font-family: Roboto, sans-serif;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -106,4 +107,41 @@ textarea:not([rows]) {
 
 .inputContainer {
   grid-area: inputContainer;
+}
+
+.inputContainer > * {
+  padding: 0.5rem;
+}
+
+.personalInfoInput,
+.educationInput,
+.experienceInput {
+  padding: 0.2rem;
+}
+
+.personalInfo {
+  background-color: #edede9;
+  padding: 0.2rem;
+}
+
+.educationList {
+  background-color: #d6ccc2;
+}
+
+.experienceList {
+  background-color: #f5ebe0;
+}
+
+.educationList,
+.experienceList {
+  padding: 0.2rem;
+  list-style: none;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
